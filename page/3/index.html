@@ -1,0 +1,344 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MyBlog</title><meta name="author" content="Fyx"><meta name="copyright" content="Fyx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:author" content="Fyx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/keyboard.png"><link rel="canonical" href="http://example.com/page/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-08-08 16:00:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/16/ES6/" title="ES6">ES6</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-16T07:19:15.000Z" title="发表于 2023-06-16 15:19:15">2023-06-16</time></span></div><div class="content">ES6介绍含义是 5.1 版以后的 JavaScript 的下一代标准，涵盖了 ES2015、ES2016、ES2017 等等，而 ES2015 则是正式名称，特指该年发布的正式版本的语言标准。
+
+ES5语言先天不足，通过学习ES6可以将其很多丑陋的部分进行隐藏。
+包含了很多超棒的新特性，可以简化很多复杂的操作，从而大大提高开发效率。
+为后面学习vue、react以及小程序做好充足准备。
+目前大部分公司的项目都在使用ES6，它是前端发展的趋势，就业必备技能之一。
+
+关键字let
+let关键字就是用来声明变量的
+使用let关键字声明的变量具有块级作用域
+在一个大括号中 使用let关键字声明的变量才具有块级作用域 var关键字是不具备这个特点的
+防止循环变量变成全局变量
+使用let关键字声明的变量没有变量提升
+使用let关键字声明的变量具有暂时性死区特性
+
+块级作用域在 ES6 中新增了块级作用域的概念，使用{}扩起来的区域叫做块级作用域let关键字声明变量，实际上为 JavaScript 新增了块级作用域。块作用域由 { } 包括，if语句和for语句里面的{ }也属于块作用域。在块内使 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/15/Ajax/" title="Ajax(axios)">Ajax(axios)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-15T06:51:20.000Z" title="发表于 2023-06-15 14:51:20">2023-06-15</time></span></div><div class="content">Ajax 的全称是 Asynchronous Javascript And XML（异步 JavaScript 和 XML）。
+通俗的理解：在网页中利用 XMLHttpRequest 对象和服务器进行数据交互的方式，就是Ajax。
+Ajax的典型应用场景用户名检测：注册用户时，通过 ajax 的形式，动态检测用户名是否被占用
+搜索提示：当输入搜索关键字时，通过 ajax 的形式，动态加载搜索提示列表
+数据分页显示：当点击页码值的时候，通过 ajax 的形式，根据页码值动态刷新表格的数据
+数据的增删改查：数据的添加、删除、修改、查询操作，都需要通过 ajax 的形式，来实现数据的交互
+了解jQuery中的Ajax浏览器中提供的 XMLHttpRequest 用法比较复杂，所以 jQuery 对 XMLHttpRequest 进行了封装，提供了一系列 Ajax 相关的函数，极大地降低了 Ajax 的使用难度。
+jQuery 中发起 Ajax 请求最常用的三个方法如下：
+
+$.get()
+$.post()
+$.ajax()
+
+$.get()jQuery 中 $.get() 函数的功能单一，专 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/14/jQuery/" title="jQuery">jQuery</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T08:20:45.000Z" title="发表于 2023-06-14 16:20:45">2023-06-14</time></span></div><div class="content">  jQuery是一个快速的简洁的js库，js查询就是把js中的dom操作做了封装，可以快速的查询使用里面的功能,jQuery封装了js常用的功能代码，调用这些函数（方法）
+引入jquery1`&lt;script src=&quot;jquery.min.js&quot;&gt;&lt;/script&gt;`
+
+  jquery.min.js是直接引入jquery，官网上，压缩版
+入口函数jQuery入口函数可以使DOM结构渲染完毕后，便执行内部代码，不必等到所有的外部资源加载完毕，相当于原生JS中的DOMContentLoaded。不同于原生JS中的load事件（所有外部资源加载完成后才开始执行内部代码）。
+12345678910$(&#x27;div&#x27;).hide();      // 1. 等着页面DOM加载完毕再去执行js 代码       $(document).ready(function() &#123;           $(&#x27;div&#x27;).hide();       &#125;)       //2.  等着页面DOM加载完毕再去执 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/14/less/" title="less">less</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T07:12:25.000Z" title="发表于 2023-06-14 15:12:25">2023-06-14</time></span></div><div class="content">less是一门css扩展语言，引入变量，运算及函数等功能
+变量@变量名：
+后面可跟：
+
+值
+属性名
+类名
+路径
+
+1234567891011121314151617181920212223242526272829303132333435// 1. 定义变量(全局变量)@bgColor:white;@Height:50rpx;.contain&#123;    background-color: @bgColor; &#125;.row&#123;    height:@Height;    margin-left:@Height;&#125;   // 定义变量（属性名）@bg-img:background-image;div&#123;  @&#123;bg-img&#125;:路径;&#125; //定义类名@demo:newClass;.@&#123;demo&#125;-new&#123; // &quot;-new&quot;在类名基础上，新的类名 newClass-new   @bg:rgb(0,0,0);   background:@bg;&#125;//div使用此类名 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/14/webAPI2/" title="webAPI(网页特效)">webAPI(网页特效)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T06:33:13.000Z" title="发表于 2023-06-14 14:33:13">2023-06-14</time></span></div><div class="content">offset 概述offset 翻译过来就是偏移量， 我们使用 offset 系列相关属性可以动态的得到该元素的位置（偏移）、大小等。
+
+获得元素距离带有定位父元素的位置
+获得元素自身的大小（宽度高度）
+注意： 返回的数值都不带单位
+
+12345son.offsetParent//返回该元素带有定位的父级元素，如果父级没有定位返回bodyson.offsetTop//返回带有定位元素上方的偏移son.offsetLeft//返回带有定位元素左边框的偏移son.offWidth//返回包括自身padding，边框，内容区的宽度，返回不带单位son.offHeight//返回包括自身padding，边框，内容区的高度，返回不带单位
+
+offset
+offset 可以得到任意样式表中的样式值
+offset 系列获得的数值是没有单位的
+offsetWidth 包含padding+border+width
+offsetWidth 等属性是只读属性，只能获取不能赋值
+
+ 所以，我们想要获取元素大小位置，用offset更合适
+style
+style 只能得到行内样式表中的样式值
+style.widt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/14/webAPI1/" title="webAPI(BOM)">webAPI(BOM)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-14T03:49:17.000Z" title="发表于 2023-06-14 11:49:17">2023-06-14</time></span></div><div class="content">BOMBOM（Browser Object Model）即浏览器对象模型，它提供了独立于内容而与浏览器窗口进行交互的对象，其核心对象是 window。
+BOM 由一系列相关的对象构成，并且每个对象都提供了很多方法与属性。
+BOM 缺乏标准，JavaScript 语法的标准化组织是 ECMA，DOM 的标准化组织是 W3C，BOM 最初是Netscape 浏览器标准的一部分
+DOM与BOM对比DOM
+文档对象模型
+DOM 就是把「文档」当做一个「对象」来看待
+DOM 的顶级对象是 document
+DOM 主要学习的是操作页面元素
+DOM 是 W3C 标准规范
+
+BOM
+浏览器对象模型
+把「浏览器」当做一个「对象」来看待
+BOM 的顶级对象是 window
+BOM 学习的是浏览器窗口交互的一些对象
+BOM 是浏览器厂商在各自浏览器上定义的，兼容性较差 
+BOM 比 DOM 更大，它包含 DOM。
+
+BOM 的构成window 对象是浏览器的顶级对象，它具有双重角色。
+
+它是 JS 访问浏览器窗口的一个接口。
+
+它是一个全局对象。定义在全局作用域中的变量、函数都会变成 window 对象的 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/13/webAPI/" title="webAPI(DOM)">webAPI(DOM)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-13T05:51:43.000Z" title="发表于 2023-06-13 13:51:43">2023-06-13</time></span></div><div class="content">
+web API是JS的应用，大量使用JS语法做交互效果
+API是应用程序编程接口，一般是某种现成的函数给程序提供工具，借助这种工具可以实现某种功能，接口
+web API是浏览器提供的一套操作浏览器功能和页面元素的API（BOM DOM）
+比如弹警示框，就是用alert
+
+DOM 文档对象模型（Document Object Model，简称 DOM），是 W3C 组织推荐的处理可扩展标记语言（HTML或者XML）的标准编程接口。 W3C 已经定义了一系列的 DOM 接口，通过这些 DOM 接口可以改变网页的内容、结构和样式。
+
+文档：一个页面就是一个文档，DOM 中使用 document 表示
+元素：页面中的所有标签都是元素，DOM 中使用 element 表示
+节点：网页中的所有内容都是节点（标签、属性、文本、注释等），DOM 中使用 node 表示DOM 把以上内容都看做是对象
+
+获取页面元素DOM在我们实际开发中主要用来操作元素。
+获取页面中的元素可以使用以下几种方式:
+
+根据 ID 获取
+根据标签名获取
+通过 HTML5 新增的方法获取
+特殊元素获取
+
+根据 ID 获取 使用 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/11/js0/" title="js(基础)">js(基础)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T12:33:51.000Z" title="发表于 2023-06-11 20:33:51">2023-06-11</time></span></div><div class="content">JS 的组成ECMAScript  JavaScript语法
+DOM ——文档对象模型
+BOM ——浏览器对象模型
+js三中引入方式内嵌式在html文件内使用标签&lt;script&gt;包裹起来,页面打开自动执行。
+行内式在html标签的属性内填写,通过行为触发执行(几乎不用)
+外链式&lt;script src=&quot;my.js&quot;&gt;&lt;/script&gt;
+输入输出语句alert(msg) 浏览器弹出警示框 浏览器
+console.log(msg) 浏览器控制台打印输出信息 浏览器
+prompt(info) 浏览器弹出输入框，用户可以输入 浏览器
+注意：alert() 主要用来显示消息给用户，console.log() 用来给程序员自己看运行时的消息。
+123456// 输入框      prompt(&#x27;请输入年龄&#x27;);//取过来是字符型的      // alert弹出警示框，输出的，展示给用户      alert(&#x27;计算的结果是&#x27;);      // console控制台输出，给程序员看F12      c ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/11/css4/" title="css(其他属性,css3新增)">css(其他属性,css3新增)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T08:57:40.000Z" title="发表于 2023-06-11 16:57:40">2023-06-11</time></span></div><div class="content">  每个网页都必须首先进行 CSS初始化。比如将所以按钮鼠标样式变小手
+元素的显示与隐藏类似网站广告，当我们点击关闭就不见了，但是我们重新刷新页面，会重新出现
+本质：让一个元素在页面中隐藏或者显示出来。
+
+display 显示隐藏
+
+visibility 显示隐藏
+
+overflow 溢出显示隐藏
+
+
+display 属性display 属性用于设置一个元素应如何显示。
+ display: none ；隐藏对象
+ display：block ；除了转换为块级元素之外，同时还有显示元素的意思
+display 隐藏元素后，不再占有原来的位置。
+后面应用及其广泛，搭配 JS 可以做很多的网页特效。
+鼠标经过可以让后面的类的样式显示
+1234.tu:hover .mask &#123;            /* 而是显示元素 */            display: block;        &#125;
+
+
+
+visibility 可见性visibility 属性用于指定一个元素应可见还是隐藏。
+ visibility：visible ; 元素可视
+visibility：hidden ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/11/css3/" title="css(布局)">css(布局)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-11T06:23:04.000Z" title="发表于 2023-06-11 14:23:04">2023-06-11</time></span></div><div class="content">  传统网页布局的三种方式：普通流（标准流）；浮动；定位
+标准流 所谓的标准流: 就是标签按照规定好默认方式排列.
+
+块级元素会独占一行，从上向下顺序排列。  常用元素：div、hr、p、h1~h6、ul、ol、dl、form、table
+
+行内元素会按照顺序，从左到右顺序排列，碰到父元素边缘则自动换行。  常用元素：span、a、i、em 等
+
+
+标准流是最基本的布局方式。 这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置，布局自然就完成了。实际开发中，一个页面基本都包含了这三种布局方式 。
+浮动 浮动最典型的应用：可以让多个块级元素一行内排列显示。
+多个块级元素纵向排列找标准流，多个块级元素横向排列找浮动
+float 属性用于创建浮动框，将其移动到一边，直到左边缘或右边缘触及包含块或另一个浮动框的边缘。
+语法：
+选择器 &#123; float: 属性值; &#125;
+属性值包括：none，不浮动；left，向左浮动；right，向右浮动；
+特性加了浮动之后的元素,会具有很多特性
+
+浮动元素会脱离标准流(脱标)
+
+浮动的元素会一行内显示并且元素顶部对齐
+
+浮动的元素会具有 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/2/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#content-inner">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/4/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyx</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwumi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/webpack/" title="webpack">webpack</a><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/webAPI/" style="font-size: 1.23em; color: #999ea6">webAPI</a> <a href="/tags/less/" style="font-size: 1.1em; color: #999">less</a> <a href="/tags/vue/" style="font-size: 1.5em; color: #99a9bf">vue</a> <a href="/tags/vue3/" style="font-size: 1.1em; color: #999">vue3</a> <a href="/tags/jQuery/" style="font-size: 1.1em; color: #999">jQuery</a> <a href="/tags/problems/" style="font-size: 1.1em; color: #999">problems</a> <a href="/tags/mobile/" style="font-size: 1.1em; color: #999">mobile</a> <a href="/tags/html/" style="font-size: 1.1em; color: #999">html</a> <a href="/tags/webpack/" style="font-size: 1.1em; color: #999">webpack</a> <a href="/tags/Ajax/" style="font-size: 1.1em; color: #999">Ajax</a> <a href="/tags/node-js/" style="font-size: 1.1em; color: #999">node.js</a> <a href="/tags/promise/" style="font-size: 1.1em; color: #999">promise</a> <a href="/tags/css/" style="font-size: 1.37em; color: #99a4b2">css</a> <a href="/tags/project/" style="font-size: 1.1em; color: #999">project</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/react/" style="font-size: 1.37em; color: #99a4b2">react</a> <a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/js/" style="font-size: 1.1em; color: #999">js</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">21</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-08T08:00:15.289Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: #1f1f1f"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Fyx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, ))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["乘兴而至","乘兴而归"])
+  } else {
+    document.getElementById("subtitle").textContent = "乘兴而至"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

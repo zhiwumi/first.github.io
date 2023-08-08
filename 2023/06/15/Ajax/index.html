@@ -1,0 +1,352 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Ajax(axios) | MyBlog</title><meta name="author" content="Fyx"><meta name="copyright" content="Fyx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="Ajax 的全称是 Asynchronous Javascript And XML（异步 JavaScript 和 XML）。 通俗的理解：在网页中利用 XMLHttpRequest 对象和服务器进行数据交互的方式，就是Ajax。 Ajax的典型应用场景用户名检测：注册用户时，通过 ajax 的形式，动态检测用户名是否被占用 搜索提示：当输入搜索关键字时，通过 ajax 的形式，动态加载搜索提示列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax(axios)">
+<meta property="og:url" content="http://example.com/2023/06/15/Ajax/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="Ajax 的全称是 Asynchronous Javascript And XML（异步 JavaScript 和 XML）。 通俗的理解：在网页中利用 XMLHttpRequest 对象和服务器进行数据交互的方式，就是Ajax。 Ajax的典型应用场景用户名检测：注册用户时，通过 ajax 的形式，动态检测用户名是否被占用 搜索提示：当输入搜索关键字时，通过 ajax 的形式，动态加载搜索提示列">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:published_time" content="2023-06-15T06:51:20.000Z">
+<meta property="article:modified_time" content="2023-06-15T10:46:19.923Z">
+<meta property="article:author" content="Fyx">
+<meta property="article:tag" content="Ajax">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/keyboard.png"><link rel="canonical" href="http://example.com/2023/06/15/Ajax/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Ajax(axios)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-15 18:46:19'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/in.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Ajax(axios)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-15T06:51:20.000Z" title="发表于 2023-06-15 14:51:20">2023-06-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-15T10:46:19.923Z" title="更新于 2023-06-15 18:46:19">2023-06-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Ajax(axios)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Ajax 的全称是 Asynchronous Javascript And XML（异步 JavaScript 和 XML）。</p>
+<p>通俗的理解：在网页中利用 XMLHttpRequest 对象和服务器进行数据交互的方式，就是Ajax。</p>
+<h2 id="Ajax的典型应用场景"><a href="#Ajax的典型应用场景" class="headerlink" title="Ajax的典型应用场景"></a>Ajax的典型应用场景</h2><p>用户名检测：注册用户时，通过 ajax 的形式，动态检测用户名是否被占用</p>
+<p>搜索提示：当输入搜索关键字时，通过 ajax 的形式，动态加载搜索提示列表</p>
+<p>数据分页显示：当点击页码值的时候，通过 ajax 的形式，根据页码值动态刷新表格的数据</p>
+<p>数据的增删改查：数据的添加、删除、修改、查询操作，都需要通过 ajax 的形式，来实现数据的交互</p>
+<h2 id="了解jQuery中的Ajax"><a href="#了解jQuery中的Ajax" class="headerlink" title="了解jQuery中的Ajax"></a>了解jQuery中的Ajax</h2><p>浏览器中提供的 XMLHttpRequest 用法比较复杂，所以 jQuery 对 XMLHttpRequest 进行了封装，提供了一系列 Ajax 相关的函数，极大地降低了 Ajax 的使用难度。</p>
+<p>jQuery 中发起 Ajax 请求最常用的三个方法如下：</p>
+<ul>
+<li>$.get()</li>
+<li>$.post()</li>
+<li>$.ajax()</li>
+</ul>
+<h3 id="get"><a href="#get" class="headerlink" title="$.get()"></a>$.get()</h3><p>jQuery 中 $.get() 函数的功能单一，专门用来发起 get 请求，从而将服务器上的资源请求到客户端来进行使用。</p>
+<p> <code>$.get(url, [data], [callback])</code></p>
+<p> 后两个参数可选 要请求的资源地址，要携带的参数，请求成功时的回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btnGET&quot;</span>&gt;发起不带参数的<span class="variable constant_">GET</span>请求&lt;/button&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      $(<span class="string">&#x27;#btnGET&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">get</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnGETINFO&quot;</span>&gt;</span>发起单参数的GET请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      $(<span class="string">&#x27;#btnGETINFO&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">get</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>, &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="post"><a href="#post" class="headerlink" title="$.post()"></a>$.post()</h3><p>jQuery 中 $.post() 函数的功能单一，专门用来发起 post 请求，从而向服务器提交数据。</p>
+<p><code> $.post(url, [data], [callback])</code></p>
+<p>要提交数据的地址，要提交的数据，回调函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btnPOST&quot;</span>&gt;发起<span class="variable constant_">POST</span>请求&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      $(<span class="string">&#x27;#btnPOST&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">post</span>(<span class="string">&#x27;http://www.liulongbin.top:3006/api/addbook&#x27;</span>, &#123; <span class="attr">bookname</span>: <span class="string">&#x27;水浒传&#x27;</span>, <span class="attr">author</span>: <span class="string">&#x27;施耐庵&#x27;</span>, <span class="attr">publisher</span>: <span class="string">&#x27;天津图书出版社&#x27;</span> &#125;, <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="ajax"><a href="#ajax" class="headerlink" title="$.ajax()"></a>$.ajax()</h3><p> $.ajax()函数的语法</p>
+<p> 相比于 $.get() 和 $.post() 函数，jQuery 中提供的 $.ajax() 函数，</p>
+<p> 是一个功能比较综合的函数，它允许我们对 Ajax 请求进行更详细的配置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$.<span class="title function_">ajax</span>(&#123;</span><br><span class="line"></span><br><span class="line"> <span class="attr">type</span>: <span class="string">&#x27;&#x27;</span>, <span class="comment">// 请求的方式，例如 GET 或 POST</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">url</span>: <span class="string">&#x27;&#x27;</span>,  <span class="comment">// 请求的 URL 地址</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">data</span>: &#123; &#125;,<span class="comment">// 这次请求要携带的数据</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">res</span>) &#123; &#125; <span class="comment">// 请求成功之后的回调函数</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">&quot;btnGET&quot;</span>&gt;发起<span class="variable constant_">GET</span>请求&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      $(<span class="string">&#x27;#btnGET&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">ajax</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">type</span>: <span class="string">&#x27;GET&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/getbooks&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">id</span>: <span class="number">1</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">&quot;btnPOST&quot;</span>&gt;</span>发起POST请求<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      $(<span class="string">&#x27;#btnPOST&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;click&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        $.<span class="title function_">ajax</span>(&#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">type</span>: <span class="string">&#x27;POST&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/addbook&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">data</span>: &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">bookname</span>: <span class="string">&#x27;史记&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">author</span>: <span class="string">&#x27;司马迁&#x27;</span>,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="attr">publisher</span>: <span class="string">&#x27;上海图书出版社&#x27;</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          &#125;,</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          <span class="attr">success</span>: <span class="keyword">function</span> (<span class="params">res</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">            <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">          &#125;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">        &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>使用 Ajax 请求数据时，被请求的 URL 地址，就叫做数据接口（简称接口）。同时，每个接口必须有请求方式。</p>
+<h2 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h2><ol>
+<li>什么是接口文档</li>
+</ol>
+<p> 接口文档，顾名思义就是接口的说明文档，它是我们调用接口的依据。好的接口文档包含了对接口URL,参数以及输出内容的说明，我们参照接口文档就能方便的知道接口的作用，以及接口如何进行调用。</p>
+<ol start="2">
+<li>接口文档的组成部分</li>
+</ol>
+<p> 接口文档可以包含很多信息，也可以按需进行精简，不过，一个合格的接口文档，应该包含以下6项内容，从而为接口的调用提供依据：</p>
+<ul>
+<li>接口名称：用来标识各个接口的简单说明，如登录接口，获取图书列表接口等。</li>
+<li>接口URL：接口的调用地址。</li>
+<li>调用方式：接口的调用方式，如 GET 或 POST。</li>
+<li>参数格式：接口需要传递的参数，每个参数必须包含参数名称、参数类型、是否必选、参数说明这4项内容。</li>
+<li>响应格式：接口的返回值的详细描述，一般包含数据名称、数据类型、说明3项内容。</li>
+<li>返回示例（可选）：通过对象的形式，例举服务器返回数据的结构。</li>
+</ul>
+<h2 id="关于form表单"><a href="#关于form表单" class="headerlink" title="关于form表单"></a>关于form表单</h2><p><code>&lt;form&gt;</code>标签的属性</p>
+<ol>
+<li>action</li>
+</ol>
+<p>  action 属性用来规定当提交表单时，向何处发送表单数据。</p>
+<p>  action 属性的值应该是后端提供的一个 URL 地址，这个 URL 地址专门负责接收表单提交过来的数据。当 <code>&lt;form&gt;</code> 表单在未指定 action 属性值的情况下，action 的默认值为当前页面的 URL 地址。</p>
+<p>  注意：当提交表单后，页面会立即跳转到 action 属性指定的 URL 地址</p>
+<ol start="2">
+<li>target</li>
+</ol>
+<p>  target 属性用来规定在何处打开 action URL。</p>
+<p>  它的可选值有5个，默认情况下，target 的值是 _self，表示在相同的框架中打开 action URL。</p>
+<ul>
+<li>_blank  在新窗口中打开。</li>
+<li>_self 默认。在相同的框架中打开。</li>
+<li>_parent 在父框架集中打开。（很少用）</li>
+<li>_top  在整个窗口中打开。（很少用）</li>
+<li>framename 在指定的框架中打开。（很少用）</li>
+</ul>
+<ol start="3">
+<li>method</li>
+</ol>
+<p>method 属性用来规定以何种方式把表单数据提交到 action URL。</p>
+<p>它的可选值有两个，分别是 get 和 post。</p>
+<p>默认情况下，method 的值为 get，表示通过URL地址的形式，把表单数据提交到 action URL。</p>
+<p>注意：</p>
+<ul>
+<li>get 方式适合用来提交少量的、简单的数据。</li>
+<li>post 方式适合用来提交大量的、复杂的、或包含文件上传的数据。</li>
+</ul>
+<p>在实际开发中，<code>&lt;form&gt;</code> 表单的 post 提交方式用的最多，很少用 get。例如登录、注册、添加数据等表单操作，都需要使用 post 方式来提交表单。</p>
+<ol start="4">
+<li>enctype</li>
+</ol>
+<p> enctype 属性用来规定在发送表单数据之前如何对数据进行编码。</p>
+<p> 它的可选值有三个，默认情况下，enctype 的值为 application&#x2F;x-www-form-urlencoded，表示在发送前编码所有的字符。</p>
+<p> application&#x2F;x-www-form-urlencoded 在发送前编码所有字符（默认）</p>
+<p>multipart&#x2F;form-data 不对字符编码。</p>
+<p>在使用包含文件上传控件的表单时，必须使用该值。</p>
+<p>text&#x2F;plain  空格转换为 “+” 加号，但不对特殊字符编码。（很少用）</p>
+<h3 id="表单的同步提交"><a href="#表单的同步提交" class="headerlink" title="表单的同步提交"></a>表单的同步提交</h3><p>通过点击 submit 按钮，触发表单提交的操作，从而使页面跳转到 action URL 的行为，叫做表单的同步提交。</p>
+<p><code>&lt;form&gt;</code>表单同步提交后，整个页面会发生跳转，跳转到 action URL 所指向的地址，用户体验很差。</p>
+<p> <code>&lt;form&gt;</code>表单同步提交后，页面之前的状态和数据会丢失。</p>
+<p>  解决方案：表单只负责采集数据，Ajax 负责将数据提交到服务器。</p>
+<h3 id="监听到表单的提交事件"><a href="#监听到表单的提交事件" class="headerlink" title="监听到表单的提交事件"></a>监听到表单的提交事件</h3><p> 在 jQuery 中，可以使用如下两种方式，监听到表单的提交事件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">&quot;/login&quot;</span> id=<span class="string">&quot;f1&quot;</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;user_name&quot;</span> /&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> /&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 第一种方式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">submit</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&#x27;监听到了表单的提交事件&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 第二种方式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&#x27;监听到了表单的提交事件2&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;!-- 阻止表单默认提交行为 --&gt;</span><br><span class="line">&lt;!-- 当监听到表单的提交事件以后，可以调用事件对象的 event.<span class="title function_">preventDefault</span>() 函数，来阻止表单的提交和页面的跳转，示例代码如下： --&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  $(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 第一种方式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">submit</span>(<span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&#x27;监听到了表单的提交事件&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      e.<span class="title function_">preventDefault</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    <span class="comment">// 第二种方式</span></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;  </span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      <span class="title function_">alert</span>(<span class="string">&#x27;监听到了表单的提交事件2&#x27;</span>)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">      e.<span class="title function_">preventDefault</span>()</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">    &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">  &#125;)</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="快速获取表单中的数据"><a href="#快速获取表单中的数据" class="headerlink" title="快速获取表单中的数据"></a>快速获取表单中的数据</h3><p>为了简化表单中数据的获取操作，jQuery 提供了 serialize() 函数，其语法格式如下：</p>
+<p><code>$(selector).serialize()</code></p>
+<p>serialize() 函数的好处：可以一次性获取到表单中的所有的数据</p>
+<p>注意：在使用 serialize() 函数快速获取表单数据时，必须为每个表单元素添加 name 属性！</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 第一种方式</span></span><br><span class="line">    <span class="comment">/* $(&#x27;#f1&#x27;).submit(function (e) &#123;</span></span><br><span class="line"><span class="comment">      e.preventDefault()</span></span><br><span class="line"><span class="comment">      var data = $(this).serialize()</span></span><br><span class="line"><span class="comment">      console.log(data)</span></span><br><span class="line"><span class="comment">    &#125;) */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 第二种方式</span></span><br><span class="line">    $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">on</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">      e.<span class="title function_">preventDefault</span>()</span><br><span class="line">      <span class="keyword">var</span> data = $(<span class="string">&#x27;#f1&#x27;</span>).<span class="title function_">serialize</span>()</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(data)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><p>它可以根据程序员指定的模板结构和数据，自动生成一个完整的HTML页面。</p>
+<p>模板引擎的好处</p>
+<ul>
+<li>减少了字符串的拼接操作</li>
+<li>使代码结构更清晰</li>
+<li>使代码更易于阅读与维护</li>
+</ul>
+<p>步骤：</p>
+<ul>
+<li>导入 art-template</li>
+<li>定义数据</li>
+<li>定义模板</li>
+<li>调用 template 函数</li>
+<li>渲染HTML结构</li>
+</ul>
+<h2 id="数据交换格式"><a href="#数据交换格式" class="headerlink" title="数据交换格式"></a>数据交换格式</h2><p>就是服务器端与客户端之间进行数据传输与交换的格式。</p>
+<p>前端领域，经常提及的两种数据交换格式分别是 XML 和 JSON。其中 XML 用的非常少，所以，我们重点要学习的数据交换格式就是 JSON。</p>
+<h3 id="XML"><a href="#XML" class="headerlink" title="XML"></a>XML</h3><p>XML 的英文全称是 EXtensible Markup Language，即可扩展标记语言。</p>
+<p>因此，XML 和 HTML 类似，也是一种标记语言。</p>
+<p>XML 和 HTML 虽然都是标记语言，但是，它们两者之间没有任何的关系。</p>
+<ul>
+<li>HTML 被设计用来描述网页上的内容，是网页内容的载体</li>
+<li>XML 被设计用来传输和存储数据，是数据的载体</li>
+</ul>
+<p>XML 格式臃肿，和数据无关的代码多，体积大，传输效率低,在 Javascript 中解析 XML 比较麻烦 </p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><ul>
+<li>概念： 的英文全称是 JavaScript Object Notation，即“JavaScript 对象表示法”。简单来讲，JSON 就是 Javascript 对象和数组的字符串表示法，它使用文本表示一个 JS 对象或数组的信息，因此，JSON 的本质是字符串。</li>
+<li>作用：JSON 是一种轻JSON量级的文本数据交换格式，在作用上类似于 XML，专门用于存储和传输数据，但是 JSON 比 XML 更小、更快、更易解析。</li>
+<li>现状：JSON 是在 2001 年开始被推广和使用的数据格式，到现今为止，JSON 已经成为了主流的数据交换格式。</li>
+</ul>
+<h4 id="JSON的两种结构"><a href="#JSON的两种结构" class="headerlink" title="JSON的两种结构"></a>JSON的两种结构</h4><p>JSON 就是用字符串来表示 Javascript 的对象和数组。所以，JSON 中包含对象和数组两种结构，通过这两种结构的相互嵌套，可以表示各种复杂的数据结构。</p>
+<p>对象结构：对象结构在 JSON 中表示为 { } 括起来的内容。数据结构为 { key: value, key: value, … } 的键值对结构。其中，key 必须是使用英文的双引号包裹的字符串，value 的数据类型可以是数字、字符串、布尔值、null、数组、对象6种类型。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;zs&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">&quot;age&quot;</span><span class="punctuation">:</span> <span class="number">20</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">&quot;gender&quot;</span><span class="punctuation">:</span> <span class="string">&quot;男&quot;</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">&quot;address&quot;</span><span class="punctuation">:</span> <span class="keyword">null</span><span class="punctuation">,</span></span><br><span class="line"></span><br><span class="line"> <span class="attr">&quot;hobby&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;吃饭&quot;</span><span class="punctuation">,</span> <span class="string">&quot;睡觉&quot;</span><span class="punctuation">,</span> <span class="string">&quot;打豆豆&quot;</span><span class="punctuation">]</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#125;</span> </span><br></pre></td></tr></table></figure>
+
+<p>数组：数组在js中是中括号“[]”扩起来的内容，数据结构为 [“java”,”javascript”,”vb”,…]，取值方式和所有语言中一样，使用索引获取，字段值的类型可以是 数字、字符串、数组、对象几种。</p>
+<h4 id="JSON语法注意事项"><a href="#JSON语法注意事项" class="headerlink" title="JSON语法注意事项"></a>JSON语法注意事项</h4><ul>
+<li>属性名必须使用双引号包裹</li>
+<li>字符串类型的值必须使用双引号包裹</li>
+<li>JSON 中不允许使用单引号表示字符串</li>
+<li>JSON 中不能写注释</li>
+<li>JSON 的最外层必须是对象或数组格式</li>
+<li>不能使用 undefined 或函数作为 JSON 的值</li>
+</ul>
+<p>JSON 的作用：在计算机与网络之间存储和传输数据。</p>
+<p>JSON 的本质：用字符串来表示 Javascript 对象数据或数组数据</p>
+<h3 id="JSON-字符串转换为-JS-对象"><a href="#JSON-字符串转换为-JS-对象" class="headerlink" title="JSON 字符串转换为 JS 对象"></a>JSON 字符串转换为 JS 对象</h3><p>使用 JSON.parse() 方法：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="string">&#x27;&#123;&quot;a&quot;: &quot;Hello&quot;, &quot;b&quot;: &quot;World&quot;&#125;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//结果是 &#123;a: &#x27;Hello&#x27;, b: &#x27;World&#x27;&#125;</span></span><br><span class="line"></span><br><span class="line">要实现从 <span class="variable constant_">JS</span> 对象转换为 <span class="title class_">JSON</span> 字符串，使用 <span class="title class_">JSON</span>.<span class="title function_">stringify</span>() 方法：</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> json = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123;<span class="attr">a</span>: <span class="string">&#x27;Hello&#x27;</span>, <span class="attr">b</span>: <span class="string">&#x27;World&#x27;</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//结果是 &#x27;&#123;&quot;a&quot;: &quot;Hello&quot;, &quot;b&quot;: &quot;World&quot;&#125;&#x27; </span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>把数据对象转换为字符串的过程，叫做序列化，例如：调用 JSON.stringify() 函数的操作，叫做 JSON 序列化。</li>
+<li>把字符串转换为数据对象的过程，叫做反序列化，例如：调用 JSON.parse() 函数的操作，叫做 JSON 反序列化。</li>
+</ul>
+<h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><p>Axios 是专注于网络数据请求的库。</p>
+<p>相比于原生的 XMLHttpRequest 对象，axios 简单易用。</p>
+<p>相比于 jQuery，axios 更加轻量化，只专注于网络数据请求。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> axios.<span class="title function_">get</span>(<span class="string">&#x27;url&#x27;</span>, &#123; <span class="attr">params</span>: &#123; <span class="comment">/*参数*/</span> &#125; &#125;).<span class="title function_">then</span>(callback)</span><br><span class="line"><span class="comment">// 请求的 URL 地址</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">&#x27;http://www.liulongbin.top:3006/api/get&#x27;</span></span><br><span class="line"><span class="comment">// 请求的参数对象</span></span><br><span class="line"><span class="keyword">var</span> paramsObj = &#123; <span class="attr">name</span>: <span class="string">&#x27;zs&#x27;</span>, <span class="attr">age</span>: <span class="number">20</span> &#125;</span><br><span class="line"><span class="comment">// 调用 axios.get() 发起 GET 请求</span></span><br><span class="line">axios.<span class="title function_">get</span>(url, &#123; <span class="attr">params</span>: paramsObj &#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line">    <span class="comment">// res.data 是服务器返回的数据</span></span><br><span class="line">    <span class="keyword">var</span> result = res.<span class="property">data</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(res)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//post请求</span></span><br><span class="line">axios.<span class="title function_">post</span>(<span class="string">&#x27;url&#x27;</span>, &#123; <span class="comment">/*参数*/</span> &#125;).<span class="title function_">then</span>(callback)</span><br><span class="line"> <span class="comment">// 请求的 URL 地址</span></span><br><span class="line"> <span class="keyword">var</span> url = <span class="string">&#x27;http://www.liulongbin.top:3006/api/post&#x27;</span></span><br><span class="line"> <span class="comment">// 要提交到服务器的数据</span></span><br><span class="line"> <span class="keyword">var</span> dataObj = &#123;<span class="attr">location</span>: <span class="string">&#x27;北京&#x27;</span>, <span class="attr">address</span>: <span class="string">&#x27;顺义&#x27;</span> &#125;</span><br><span class="line"> <span class="comment">// 调用 axios.post() 发起 POST 请求</span></span><br><span class="line"> axios.<span class="title function_">post</span>(url, dataObj).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line">     <span class="comment">// res.data 是服务器返回的数据</span></span><br><span class="line">     <span class="keyword">var</span> result = res.<span class="property">data</span></span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(result)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>axios 也提供了类似于 jQuery 中 $.ajax() 的函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">axios</span>(&#123;</span><br><span class="line">     <span class="attr">method</span>: <span class="string">&#x27;请求类型&#x27;</span>,</span><br><span class="line">     <span class="attr">url</span>: <span class="string">&#x27;请求的URL地址&#x27;</span>,</span><br><span class="line">     <span class="attr">data</span>: &#123; <span class="comment">/* POST数据 */</span> &#125;,</span><br><span class="line">     <span class="attr">params</span>: &#123; <span class="comment">/* GET参数 */</span> &#125;</span><br><span class="line"> &#125;) .<span class="title function_">then</span>(callback)</span><br></pre></td></tr></table></figure>
+
+<h3 id="引axios包"><a href="#引axios包" class="headerlink" title="引axios包"></a>引axios包</h3><h3 id="发起请求"><a href="#发起请求" class="headerlink" title="发起请求"></a>发起请求</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 直接使用axios发起GET请求</span></span><br><span class="line">   </span><br><span class="line">  <span class="title function_">axios</span>(&#123;</span><br><span class="line">     <span class="attr">method</span>: <span class="string">&#x27;GET&#x27;</span>,</span><br><span class="line">     <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/get&#x27;</span>,</span><br><span class="line">     <span class="attr">params</span>: &#123; <span class="comment">// GET 参数要通过 params 属性提供</span></span><br><span class="line">         <span class="attr">name</span>: <span class="string">&#x27;zs&#x27;</span>,</span><br><span class="line">         <span class="attr">age</span>: <span class="number">20</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>)</span><br><span class="line"> &#125;)</span><br><span class="line"> <span class="comment">//2. 直接使用axios发起POST请求</span></span><br><span class="line">   </span><br><span class="line"> <span class="title function_">axios</span>(&#123;</span><br><span class="line">     <span class="attr">method</span>: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">     <span class="attr">url</span>: <span class="string">&#x27;http://www.liulongbin.top:3006/api/post&#x27;</span>,</span><br><span class="line">     <span class="attr">data</span>: &#123; <span class="comment">// POST 数据要通过 data 属性提供</span></span><br><span class="line">         <span class="attr">bookname</span>: <span class="string">&#x27;程序员的自我修养&#x27;</span>,</span><br><span class="line">         <span class="attr">price</span>: <span class="number">666</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;).<span class="title function_">then</span>(<span class="keyword">function</span>(<span class="params">res</span>) &#123;</span><br><span class="line">     <span class="variable language_">console</span>.<span class="title function_">log</span>(res.<span class="property">data</span>)</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="同源"><a href="#同源" class="headerlink" title="同源"></a>同源</h2><p>如果两个页面的协议，域名和端口都相同，则两个页面具有相同的源。</p>
+<p>例如，下表给出了相对于 <a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a> 页面的同源检测：</p>
+<p>URL 是否同源  原因</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.test.com/other.html">http://www.test.com/other.html</a>  是 同源（协议、域名、端口相同）</li>
+<li><a target="_blank" rel="noopener" href="https://www.test.com/about.html">https://www.test.com/about.html</a> 否 协议不同（http 与 https）</li>
+<li><a target="_blank" rel="noopener" href="http://blog.test.com/movie.html">http://blog.test.com/movie.html</a> 否 域名不同（<a target="_blank" rel="noopener" href="http://www.test.com/">www.test.com</a> 与 blog.test.com）</li>
+<li><a target="_blank" rel="noopener" href="http://www.test.com:7001/home.html">http://www.test.com:7001/home.html</a>  否 端口不同（默认的 80 端口与 7001 端口）</li>
+<li><a target="_blank" rel="noopener" href="http://www.test.com/main.html">http://www.test.com:80/main.html</a>  是 同源（协议、域名、端口相同）</li>
+</ul>
+<p>同源指的是两个 URL 的协议、域名、端口一致，反之，则是跨域。</p>
+<p>出现跨域的根本原因：浏览器的同源策略不允许非同源的 URL 之间进行资源的交互。</p>
+<ul>
+<li>网页：<a target="_blank" rel="noopener" href="http://www.test.com/index.html">http://www.test.com/index.html</a></li>
+<li>接口：<a target="_blank" rel="noopener" href="http://www.api.com/userlist">http://www.api.com/userlist</a></li>
+</ul>
+<p>注意：浏览器允许发起跨域请求，但是，跨域请求回来的数据，会被浏览器拦截，无法被页面获取到</p>
+<h2 id="如何实现跨域数据请求"><a href="#如何实现跨域数据请求" class="headerlink" title="如何实现跨域数据请求"></a>如何实现跨域数据请求</h2><p>现如今，实现跨域数据请求，最主要的两种解决方案，分别是 JSONP 和 CORS。</p>
+<p>JSONP：出现的早，兼容性好（兼容低版本IE）。是前端程序员为了解决跨域问题，被迫想出来的一种临时解决方案。缺点是只支持 GET 请求，不支持 POST 请求。</p>
+<p>CORS：出现的较晚，它是 W3C 标准，属于跨域 Ajax 请求的根本解决方案。支持 GET 和 POST 请求。缺点是不兼容某些低版本的浏览器。 –&gt;</p>
+<!-- JSONP (JSON with Padding) 是 JSON 的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。
+
+由于浏览器同源策略的限制，网页中无法通过 Ajax 请求非同源的接口数据。但是 `<script> `标签不受浏览器同源策略的影响，可以通过 src 属性，请求非同源的 js 脚本。
+
+因此，JSONP 的实现原理，就是通过` <script> `标签的 src 属性，请求跨域的数据接口，并通过函数调用的形式，接收跨域接口响应回来的数据。
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://zhiwumi.github.io/">Fyx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://zhiwumi.github.io/2023/06/15/Ajax/">https://zhiwumi.github.io/2023/06/15/Ajax/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">如有转载，请注明来自原作者</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Ajax/">Ajax</a></div><div class="post_share"><div class="social-share" data-image="/img/touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/16/ES6/" title="ES6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">ES6</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/14/jQuery/" title="jQuery"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">jQuery</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyx</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwumi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax%E7%9A%84%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">Ajax的典型应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%86%E8%A7%A3jQuery%E4%B8%AD%E7%9A%84Ajax"><span class="toc-number">2.</span> <span class="toc-text">了解jQuery中的Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#get"><span class="toc-number">2.1.</span> <span class="toc-text">$.get()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#post"><span class="toc-number">2.2.</span> <span class="toc-text">$.post()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax"><span class="toc-number">2.3.</span> <span class="toc-text">$.ajax()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">接口文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Eform%E8%A1%A8%E5%8D%95"><span class="toc-number">4.</span> <span class="toc-text">关于form表单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E7%9A%84%E5%90%8C%E6%AD%A5%E6%8F%90%E4%BA%A4"><span class="toc-number">4.1.</span> <span class="toc-text">表单的同步提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E5%88%B0%E8%A1%A8%E5%8D%95%E7%9A%84%E6%8F%90%E4%BA%A4%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.2.</span> <span class="toc-text">监听到表单的提交事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">4.3.</span> <span class="toc-text">快速获取表单中的数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E"><span class="toc-number">5.</span> <span class="toc-text">模板引擎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E4%BA%A4%E6%8D%A2%E6%A0%BC%E5%BC%8F"><span class="toc-number">6.</span> <span class="toc-text">数据交换格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#XML"><span class="toc-number">6.1.</span> <span class="toc-text">XML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON"><span class="toc-number">6.2.</span> <span class="toc-text">JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON%E7%9A%84%E4%B8%A4%E7%A7%8D%E7%BB%93%E6%9E%84"><span class="toc-number">6.2.1.</span> <span class="toc-text">JSON的两种结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON%E8%AF%AD%E6%B3%95%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">6.2.2.</span> <span class="toc-text">JSON语法注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JSON-%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BA-JS-%E5%AF%B9%E8%B1%A1"><span class="toc-number">6.3.</span> <span class="toc-text">JSON 字符串转换为 JS 对象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Axios"><span class="toc-number">7.</span> <span class="toc-text">Axios</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95axios%E5%8C%85"><span class="toc-number">7.1.</span> <span class="toc-text">引axios包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%91%E8%B5%B7%E8%AF%B7%E6%B1%82"><span class="toc-number">7.2.</span> <span class="toc-text">发起请求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%BA%90"><span class="toc-number">8.</span> <span class="toc-text">同源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E8%B7%A8%E5%9F%9F%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82"><span class="toc-number">9.</span> <span class="toc-text">如何实现跨域数据请求</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/webpack/" title="webpack">webpack</a><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></div></div></div></div></div></div></main><footer id="footer" style="background: #1f1f1f"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Fyx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

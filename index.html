@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MyBlog</title><meta name="author" content="Fyx"><meta name="copyright" content="Fyx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:author" content="Fyx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/keyboard.png"><link rel="canonical" href="http://example.com/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-08-08 16:00:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/05/webpack/" title="webpack">webpack</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></span></div><div class="content">概念
+webpack是前端项目工程化的具体解决方案
+提供友好前端模块化开发支持，代码压缩混淆，处理浏览器端js兼容性，性能优化
+提高开发效率和项目可维护性
+
+npm init -y
+可在当前目录创建一个 package.json 文件
+安装npm install &#x77;&#101;&#98;&#112;&#97;&#99;&#x6b;&#x40;&#x35;&#46;&#52;&#x32;&#x2e;&#49; &#119;&#x65;&#x62;&#x70;&#97;&#99;&#x6b;&#45;&#99;&#108;&#105;&#x40;&#x34;&#x2e;&#55;&#x2e;&#x32; -D
+-D 开发阶段 -S 开发和上线阶段都用到，package.json里有相应节点
+配置创建webpack.config.js12345module.exports = &#123;  //mode指定构建模式，此为开发阶段，production为上线后,并且可以压缩main.js  mode: &#x27;development&#x27;,&#125;
+
+package. ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></span></div><div class="content">概念node.js是基于chrome v8引擎的js运行环境
+node.js是js的后端运行环境，node.js无法调用dom和bom等浏览器内置api，还有ajax，它采用事件驱动、异步编程、为网络服务而设计，实现了诸如文件系统、模块、包、操作系统 API、网络通信等 core-js 没有或者不完善的功能。
+ 输入node 文件名即可运行
+fs文件系统模块Node.js官方提供的用来操作文件的模块
+使用readFile方法读取文件内容1234567891011121314151617181920// 1.导入fs模块，操作文件const fs = require(&#x27;fs&#x27;)// 2.调用fs.readfile()方法// 参数1：读取文件的存放路径// 参数二：读取时采用的编码格式一般utf8// 参数三：回调函数，拿到读取失败和成功的结果fs.readFile(&#x27;11.txt&#x27;,&#x27;utf8&#x27;,function(err,datastr)&#123;    //如果读取成功，err的值为null    //读取失败，err的值 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></span></div><div class="content">基本概念视口
+视口是浏览器显示页面内容的屏幕区域，分为布局视口，视觉视口和理想视口
+布局视口，不适合页面开发，pc端直接显示手机上字小，一般移动设备的浏览器都默认设置一个布局视口，iOS，Android基本将这个视口默认设置980px
+视觉视口，用户正在看到的网站的区域， 可通过缩放操作视觉视口，不会影响布局视口
+理想视口，对设备来说最理想的视口尺寸
+需手动添加meta视口标签通知浏览器操作
+meta视口标签的主要目的：布局视口宽度应于理想视口宽度一致
+
+12&lt;!-- 视口标签，宽度等于设备宽；初始缩放比，大于0；最大缩放比，大于0；最小缩放比，大于0；用户是否可以缩放 --&gt;   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no&quot; &gt;
+
+
+开发时1px不一定是1个物理像素 ，物理像素就是分辨率
+在 iPhone8里面  1px 开 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></span></div><div class="content">介绍在vue中实现集中式状态（数据）管理的一个vue插件
+多个组件的共享状态进行集中式管理，是一种组件间的通信的方式，适用于任意组件通信
+使用场景
+多个组件依赖于同一状态
+来自不同组件的行为需要变更同一状态
+
+
+安装npm i vuex@3  vue2中安装，如果vue3使用，需安装vuex@4
+求和案例src-&gt;store-&gt;index.js
+用于创建核心store
+123456789101112131415161718192021222324252627import Vue from &#x27;vue&#x27;import Vuex from &#x27;vuex&#x27;Vue.use(Vuex)//用于响应组件中的动作const actions = &#123;   //  jia(context, value) &#123;     // context.commit(&#x27;JIA&#x27;, value) // &#125;&#125;//用于操作数据const mutations = &#123;     JIA(state, value) &# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></span></div><div class="content">流程图：
+beforeCreate这个时候，在实例被完成创建出来，el和data都没有初始化，不能访问data、method，一般在这个阶段不进行操作。
+created这个时候，vue实例中的data、method已被初始化，属性也被绑定，但是此时还是虚拟dom，真是dom还没生成，$el 还不可用。这个时候可以调用data和method的数据及方法，created钩子函数是最早可以调用data和method的，一般在此对数据进行初始化。
+beforeMount此时，页面呈现的是未经vue编译的DOM结构，所有对DOM的操作，最终都不奏效
+mounted页面呈现的是经过Vue编译的DOM，对DOM的操作有效，一般在此进行：开启定时器，发送网络请求，订阅消息等初始化操作
+beforeUpdate数据是新的，页面是旧的
+updated数据已经更改完成，dom也重新render完成
+beforeDestroy销毁前执行（$destroy方法被调用的时候就会执行）,一般在这里善后:清除计时器、清除非指令绑定的事件等等…’)
+destroyed销毁后 （Dom元素存在，只是不再受vue控制）,卸 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/01/react4/" title="react(redux)">react(redux)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-01T14:21:01.000Z" title="发表于 2023-08-01 22:21:01">2023-08-01</time></span></div><div class="content">Redux含义
+Redux 是用于做 状态管理 的 JS 库（不是react插件库）
+可用于 React、Angular、Vue 等项目中，基本与React配合使用
+作用：集中式管理 React 应用多个组件共享的状态
+
+使用场景
+某个组件的状态，需要让其他组件拿到（共享）
+一个组件需要改变另一个组件的状态（通信）
+使用原则：能不用就不用
+
+原理图
+核心概念Action
+可以省略创建。
+把数据从应用传到 store 的有效载荷，Action 是 store 数据的唯一来源。
+一般会通过 store.dispatch() 将 action 传到 store。
+type ：标识属性, 值为字符串, 唯一, 必要属性。
+data ：数据属性, 值类型任意, 可选属性
+
+Store核心对象
+用来维持应用所有的 state 树 的一个对象，改变 store 内 state 的惟一途径是对它 dispatch 一个 action。
+Reducers
+指定了应用状态的变化如何响应 actions 并发送到 store 。
+为纯函数
+接收到两个参数：前状态、动作对象。产生新状态
+作用：初始化状态、加工 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/08/01/problems/" title="明天和意外不知道哪个先来（问题）">明天和意外不知道哪个先来（问题）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-08-01T10:09:42.000Z" title="发表于 2023-08-01 18:09:42">2023-08-01</time></span></div><div class="content">Vue 数组中出现__ob__: Observer无法取值
+出现原因这个后缀其实是Vue监控变量产生的，一般都是不可枚举的
+应该考虑到我们再用vue取值的方式是Ajax异步的,还没有从数据库中取到值放到对应的数组中去你那边就开始取值，取不到，设一个延迟等去取完之后呢你在进行赋值，用JSON.parse(JSON.stringify(this.arr))
+解决方案1234567891011121314mounted () &#123;    setTimeout(() =&gt; &#123;      // 这里就写你要执行的语句即可，先让数据库的数据加载进去数组中你在从数组中取值就好了      const len = Math.ceil(this.detailList.length / 50)      for (let i = 0; i &lt; len; i++) &#123;        this.btncount[i] = i + 1        // console.log(i)      &#125;      this.btncount = JSON.parse( ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/30/promise/" title="promise">promise</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-30T02:39:15.000Z" title="发表于 2023-07-30 10:39:15">2023-07-30</time></span></div><div class="content">基本概念promise是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大,它是一个 ECMAScript 6 提供的类，目的是更加优雅地书写复杂的异步任务。
+所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise是一个对象，从它可以获取异步操作的消息，Promise提供统一的 API，各种异步操作都可以用同样的方法进行处理。
+异步编程
+同步模式的执行顺序就是排队执行，前面的执行完毕，后面的再执行。
+异步模式则是开启一个任务后，不会等待任务执行完毕才开始下一个任务，而是开启一个任务后就开始下一个任务。
+
+12345        setTimeout(function()&#123;            console.log(&#x27;执行&#x27;);        &#125;,1000)        console.log(&#x27;xyg&#x27;);//先输出xyg
+
+
+
+回调地狱
+当一个回调函数嵌套一个回调函数的时候就会出现一个嵌套结构当嵌套的多了就会出现回调地 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/28/react3/" title="react3(路由)">react3(路由)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-28T01:43:25.000Z" title="发表于 2023-07-28 09:43:25">2023-07-28</time></span></div><div class="content">安装 react-router-dom12345// 5.X 版本npm install react-router-dom@5.2.0 -S// 6.X 版本npm install react-router-dom -S
+
+5.X 版本路由1234567891011121314151617181920212223242526272829// App.jsximport React, &#123; Component &#125; from &#x27;react&#x27;import &#123; Link, Route &#125; from &#x27;react-router-dom&#x27;import Home from &#x27;./components/Home&#x27;import About from &#x27;./components/About&#x27;export default class App extends Component &#123;  render() &#123;    return (      &lt;div&gt;       ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/23/react2/" title="react(脚手架，配置代理)">react(脚手架，配置代理)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-23T11:33:45.000Z" title="发表于 2023-07-23 19:33:45">2023-07-23</time></span></div><div class="content">react脚手架脚手架为webpack所搭建，包含了所有需要的配置，并下载了所有相关的依赖
+创建项目
+全局安装 react 脚手架：npm i -g create-react-app
+创建项目： npx create-react-app 项目名
+进入文件夹：cd 项目名
+启动项目：npm start
+
+部分项目文件分析
+manifest.json :适配移动端的设置,应用加壳（把网页变成安卓&#x2F;IOS 软件)
+robots.txt :规定爬虫爬取的文件规则
+App.css :App组件的样式
+App.js :App组件
+App.test.js :用于给App做测试（使用少）
+reportWebVitals.js ：页面性能分析文件，需要 web-vitals 库支持
+setupTests.js ：组件单元测试文件，需要 jest-dom 库支持
+
+index.html
+12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;  &lt;head&g ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyx</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwumi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/webpack/" title="webpack">webpack</a><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/webAPI/" style="font-size: 1.23em; color: #999ea6">webAPI</a> <a href="/tags/less/" style="font-size: 1.1em; color: #999">less</a> <a href="/tags/vue/" style="font-size: 1.5em; color: #99a9bf">vue</a> <a href="/tags/vue3/" style="font-size: 1.1em; color: #999">vue3</a> <a href="/tags/jQuery/" style="font-size: 1.1em; color: #999">jQuery</a> <a href="/tags/problems/" style="font-size: 1.1em; color: #999">problems</a> <a href="/tags/mobile/" style="font-size: 1.1em; color: #999">mobile</a> <a href="/tags/html/" style="font-size: 1.1em; color: #999">html</a> <a href="/tags/webpack/" style="font-size: 1.1em; color: #999">webpack</a> <a href="/tags/Ajax/" style="font-size: 1.1em; color: #999">Ajax</a> <a href="/tags/node-js/" style="font-size: 1.1em; color: #999">node.js</a> <a href="/tags/promise/" style="font-size: 1.1em; color: #999">promise</a> <a href="/tags/css/" style="font-size: 1.37em; color: #99a4b2">css</a> <a href="/tags/project/" style="font-size: 1.1em; color: #999">project</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/react/" style="font-size: 1.37em; color: #99a4b2">react</a> <a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/js/" style="font-size: 1.1em; color: #999">js</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">21</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-08T08:00:15.289Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: #1f1f1f"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Fyx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, ))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["乘兴而至","乘兴而归"])
+  } else {
+    document.getElementById("subtitle").textContent = "乘兴而至"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

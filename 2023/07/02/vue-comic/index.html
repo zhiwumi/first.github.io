@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>vue_comic | MyBlog</title><meta name="author" content="Fyx"><meta name="copyright" content="Fyx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="前期准备创建项目1vue create vue_comic  安装element-ui1npm i element-ui -S  安装axios1npm i axios  关于elementui里的样式类名可以F12（网页调试）选择元素查看,并修改 关于跨域，配置代理在vue.config.js中 123456789101112131415const &amp;#123; defineConfig &amp;#1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue_comic">
+<meta property="og:url" content="http://example.com/2023/07/02/vue-comic/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:description" content="前期准备创建项目1vue create vue_comic  安装element-ui1npm i element-ui -S  安装axios1npm i axios  关于elementui里的样式类名可以F12（网页调试）选择元素查看,并修改 关于跨域，配置代理在vue.config.js中 123456789101112131415const &amp;#123; defineConfig &amp;#1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:published_time" content="2023-07-02T06:18:27.000Z">
+<meta property="article:modified_time" content="2023-08-02T08:26:22.689Z">
+<meta property="article:author" content="Fyx">
+<meta property="article:tag" content="project">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/keyboard.png"><link rel="canonical" href="http://example.com/2023/07/02/vue-comic/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue_comic',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-08-02 16:26:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/in.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue_comic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-07-02T06:18:27.000Z" title="发表于 2023-07-02 14:18:27">2023-07-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-08-02T08:26:22.689Z" title="更新于 2023-08-02 16:26:22">2023-08-02</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vue_comic"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create vue_comic</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装element-ui"><a href="#安装element-ui" class="headerlink" title="安装element-ui"></a>安装element-ui</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui -S</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装axios"><a href="#安装axios" class="headerlink" title="安装axios"></a>安装axios</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i axios</span><br></pre></td></tr></table></figure>
+
+<p>关于elementui里的样式类名可以F12（网页调试）选择元素查看,并修改</p>
+<h3 id="关于跨域，配置代理"><a href="#关于跨域，配置代理" class="headerlink" title="关于跨域，配置代理"></a>关于跨域，配置代理</h3><p>在vue.config.js中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; defineConfig &#125; = <span class="built_in">require</span>(<span class="string">&#x27;@vue/cli-service&#x27;</span>)</span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">defineConfig</span>(&#123;</span><br><span class="line">  <span class="attr">transpileDependencies</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">devServer</span>: &#123;</span><br><span class="line">    <span class="attr">proxy</span>: &#123;</span><br><span class="line">      <span class="string">&#x27;/api&#x27;</span>: &#123;</span><br><span class="line">        <span class="comment">// 匹配所有以 &#x27;/api&#x27;开头的请求路径</span></span><br><span class="line">        <span class="attr">target</span>: <span class="string">&#x27;https://www.kuaikanmanhua.com&#x27;</span>, <span class="comment">// 代理目标的基础路径</span></span><br><span class="line">        <span class="attr">changeOrigin</span>: <span class="literal">true</span>,</span><br><span class="line">        <span class="comment">// 把路径的 /api 替换为空串</span></span><br><span class="line">        <span class="attr">pathRewrite</span>: &#123; <span class="string">&#x27;^/api&#x27;</span>: <span class="string">&#x27;&#x27;</span> &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>request.js 请求数据去，封装请求路径</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">&#x27;axios&#x27;</span></span><br><span class="line"><span class="comment">// 调用此函数，创建一个实例对象，用request来接收</span></span><br><span class="line"><span class="keyword">const</span> request = axios.<span class="title function_">create</span>(&#123;</span><br><span class="line">  <span class="comment">// 设置了代理，将端口号改为自己的</span></span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;http://localhost:8080&#x27;</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> request</span><br></pre></td></tr></table></figure>
+
+<h2 id="过程一些关键点"><a href="#过程一些关键点" class="headerlink" title="过程一些关键点"></a>过程一些关键点</h2><h3 id="每日更新"><a href="#每日更新" class="headerlink" title="每日更新"></a>每日更新</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;update&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 介绍 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;intr&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>每日更新<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in arr&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span> @<span class="attr">click.prevent</span>=<span class="string">&quot;getDailyUpdate(item)&quot;</span>&gt;</span>&#123;&#123;item|getDate&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 具体漫画 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;spe2&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 只取10条数据 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;fixedTitle&quot;</span> <span class="attr">v-for</span>=<span class="string">&quot;(item,index) in daily.slice(0, 10)&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;index&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;&quot;</span> &gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">&quot;item.cover_image_url&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;title&quot;</span>&gt;</span>&#123;&#123; item.title &#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>日期动态变化，显示今天昨天（变换api时循环出现问题，只用了arr,而且数据显示的不是当天，而是周日的数据）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算出由今天向以前推的数组</span></span><br><span class="line"><span class="keyword">async</span> getarr () &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt;= <span class="number">6</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">date</span>.<span class="title function_">getDay</span>() - i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">arr</span>[i] = <span class="variable language_">this</span>.<span class="property">date</span>.<span class="title function_">getDay</span>() - i</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//会出现负数，要加7</span></span><br><span class="line">          <span class="variable language_">this</span>.<span class="property">arr</span>[i] = <span class="variable language_">this</span>.<span class="property">date</span>.<span class="title function_">getDay</span>() - i + <span class="number">7</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对应周</span></span><br><span class="line">  <span class="comment">/*  async getDate () &#123;</span></span><br><span class="line"><span class="comment">      // 显示周是0-6</span></span><br><span class="line"><span class="comment">      const arrDate = [&#x27;周日&#x27;, &#x27;周一&#x27;, &#x27;周二&#x27;, &#x27;周三&#x27;, &#x27;周四&#x27;, &#x27;周五&#x27;, &#x27;周六&#x27;]</span></span><br><span class="line"><span class="comment">      for (let i = 0; i &lt;= 6; i++) &#123;</span></span><br><span class="line"><span class="comment">        this.arr1[i] = arrDate[this.arr[i]]</span></span><br><span class="line"><span class="comment">      &#125;</span></span><br><span class="line"><span class="comment">      this.arr1[0] = &#x27;今天&#x27;</span></span><br><span class="line"><span class="comment">      this.arr1[1] = &#x27;昨天&#x27;</span></span><br><span class="line"><span class="comment">      console.log(this.arr1)</span></span><br><span class="line"><span class="comment">    &#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//过滤器</span></span><br><span class="line"> <span class="attr">filters</span>: &#123;</span><br><span class="line">    getDate (val) &#123;</span><br><span class="line">      <span class="keyword">const</span> arrDate = [<span class="string">&#x27;周日&#x27;</span>, <span class="string">&#x27;周一&#x27;</span>, <span class="string">&#x27;周二&#x27;</span>, <span class="string">&#x27;周三&#x27;</span>, <span class="string">&#x27;周四&#x27;</span>, <span class="string">&#x27;周五&#x27;</span>, <span class="string">&#x27;周六&#x27;</span>]</span><br><span class="line">      <span class="keyword">return</span> arrDate[val]</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>点击不同日期获取不同漫画</p>
+<p>ps：<code>在Vue中，请求API通常需要使用异步操作。这是因为在发送请求并等待响应返回的过程中，页面需要继续渲染和响应用户的操作。在上述代码中，可以看到在mounted生命周期钩子函数中使用了axios库发送了一个异步的GET请求和一个异步的POST请求。通过使用.then()和.catch()方法，可以在请求完成后处理响应数据或捕获错误。这样可以确保在请求过程中不会阻塞页面的加载和用户的交互。因此，Vue中请求API通常需要使用异步操作来保证页面的流畅性和响应性。</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> getDailyUpdate (item) &#123;</span><br><span class="line">     <span class="keyword">await</span> <span class="title function_">getDailyUpdate</span>(item)</span><br><span class="line">       .<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="comment">// console.log(res.data.data.topics[0])</span></span><br><span class="line">         <span class="variable language_">this</span>.<span class="property">daily</span> = res.<span class="property">data</span>.<span class="property">data</span>.<span class="property">topics</span></span><br><span class="line">       &#125;)</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>请求特殊接口</p>
+<p>想请求<a target="_blank" rel="noopener" href="http://localhost:8080/api/v2/pweb/topic/13497%E6%AD%A4%E6%A0%B7%E5%BC%8F">http://localhost:8080/api/v2/pweb/topic/13497此样式</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getDetail</span> (id) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="title function_">request</span>(&#123;</span><br><span class="line">    <span class="comment">// 此处请求的样式</span></span><br><span class="line">    <span class="comment">// http://localhost:8080/api/v2/pweb/topic/13497?id=13497</span></span><br><span class="line">    <span class="attr">url</span>: <span class="string">&#x27;/api/v2/pweb/topic/&#x27;</span> + id,</span><br><span class="line">    <span class="attr">method</span>: <span class="string">&#x27;get&#x27;</span>,</span><br><span class="line">    <span class="attr">params</span>: &#123;</span><br><span class="line">      id</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Fyx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/07/02/vue-comic/">http://example.com/2023/07/02/vue-comic/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">MyBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/project/">project</a></div><div class="post_share"><div class="social-share" data-image="/img/touxiang.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/09/vue3-1/" title="vue3"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">vue3</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/20/vue4/" title="vue(axios,配置代理,路由)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">vue(axios,配置代理,路由)</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyx</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwumi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E5%87%86%E5%A4%87"><span class="toc-number">1.</span> <span class="toc-text">前期准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.1.</span> <span class="toc-text">创建项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85element-ui"><span class="toc-number">1.2.</span> <span class="toc-text">安装element-ui</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85axios"><span class="toc-number">1.3.</span> <span class="toc-text">安装axios</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E%E8%B7%A8%E5%9F%9F%EF%BC%8C%E9%85%8D%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">关于跨域，配置代理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B%E4%B8%80%E4%BA%9B%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">过程一些关键点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E6%9B%B4%E6%96%B0"><span class="toc-number">2.1.</span> <span class="toc-text">每日更新</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/webpack/" title="webpack">webpack</a><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></div></div></div></div></div></div></main><footer id="footer" style="background: #1f1f1f"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Fyx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

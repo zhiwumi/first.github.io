@@ -1,0 +1,304 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>MyBlog</title><meta name="author" content="Fyx"><meta name="copyright" content="Fyx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta property="og:type" content="website">
+<meta property="og:title" content="MyBlog">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="MyBlog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/touxiang.jpg">
+<meta property="article:author" content="Fyx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/touxiang.jpg"><link rel="shortcut icon" href="/img/keyboard.png"><link rel="canonical" href="http://example.com/page/2/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'MyBlog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-08-08 16:00:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/touxiang.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/2.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="MyBlog"><span class="site-name">MyBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-file-code"></i><span> Demo</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/HtmlPages/sentence/sen.html"><i class="fa-fw fas fa-code"></i><span> 1</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">MyBlog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/23/react1/" title="react(生命周期)">react(生命周期)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-23T04:19:02.000Z" title="发表于 2023-07-23 12:19:02">2023-07-23</time></span></div><div class="content">旧版生命周期三个阶段
+
+挂载
+更新
+卸载
+
+挂载
+constructor（props）
+数据初始化
+
+componentWillMount（）
+
+
+​       将要挂载时调用
+
+render（）
+初始化渲染，状态更新之后
+
+componentDidMount（）
+组件挂载后
+
+
+更新
+componentWillReceiveProps ()
+
+在已挂载的组件接收新的props之前调用，第一次传的不算  
+
+shouldComponentUpdate（）
+
+控制组件是否更新的阀门，不写底层会补，默认为 true ，如返回 false ，则后续流程不会进行。
+
+componetnWillUpdate（）
+
+组件将要更新
+
+render（）
+
+执行更新
+
+componentDidUpdate（）
+
+更新完毕
+卸载componentWillUnmount（）
+父子组件写法1234567891011class A extends React.Component&#123;    render()&#123;        return(        &lt;div&gt;          ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/17/react/" title="react(基础)">react(基础)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-17T02:40:08.000Z" title="发表于 2023-07-17 10:40:08">2023-07-17</time></span></div><div class="content">简介是一个将数据渲染为HTML视图的开源JavaScript库
+特点
+采用组件化模式、声明式编码，提高开发效率和组件复用率
+在 React Native 中可用 React 语法进行移动端开发
+使用虚拟 DOM 和 Diffing 算法，减少与真实 DOM 的交互
+
+初始React123456789101112131415161718192021222324252627282930313233&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;  &lt;meta charset=&quot;UTF-8&quot;&gt;  &lt;title&gt;01_HelloReact&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;!--准备一个容器--&gt;  &lt;div id=&quot;test&quot;&gt;&lt;/div&gt;  &lt;!--react的核心库--&gt;  &lt;script type=&quot;text/javascript&quot; src=&quot;.. ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/09/vue3-1/" title="vue3">vue3</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-09T09:48:14.000Z" title="发表于 2023-07-09 17:48:14">2023-07-09</time></span></div><div class="content">创建vue3项目(两种方法)vue-cli创建123456# 查看 @vue/cli 版本，确保版本在4.5.0以上vue --version# 如果低于，升级@vue/clinpm install -g @vue/cli# 创建vue create vue_test
+
+vite创建优点：
+
+开发环境中 无需打包 可以快速的冷启动
+​    轻量快速热重载
+​    按需编译
+
+12345npm init vite-app 项目名#创建后cd 项目名称npm installnpm run dev
+
+或
+1npm init vue@latest
+
+结构分析main.js
+123456789//引入的不是vue的构造函数，是一个名为createApp的工厂函数import &#123; createApp &#125; from &#x27;vue&#x27;import App from &#x27;./App.vue&#x27;// createApp(App).mount(&#x27;#app&#x27;)// 应用实例对象app,类似vue2的vm，但相比没有很多的属性const  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/02/vue-comic/" title="vue_comic">vue_comic</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-02T06:18:27.000Z" title="发表于 2023-07-02 14:18:27">2023-07-02</time></span></div><div class="content">前期准备创建项目1vue create vue_comic
+
+安装element-ui1npm i element-ui -S
+
+安装axios1npm i axios
+
+关于elementui里的样式类名可以F12（网页调试）选择元素查看,并修改
+关于跨域，配置代理在vue.config.js中
+123456789101112131415const &#123; defineConfig &#125; = require(&#x27;@vue/cli-service&#x27;)module.exports = defineConfig(&#123;  transpileDependencies: true,  devServer: &#123;    proxy: &#123;      &#x27;/api&#x27;: &#123;        // 匹配所有以 &#x27;/api&#x27;开头的请求路径        target: &#x27;https://www.kuaikanmanhua.com&#x27;, // 代理目标的基础路径        change ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/20/vue4/" title="vue(axios,配置代理,路由)">vue(axios,配置代理,路由)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-20T05:08:59.000Z" title="发表于 2023-06-20 13:08:59">2023-06-20</time></span></div><div class="content">axios基本用法先导入axios包
+npm i axios -S
+对于每一个根路径，独立封装一个 request.js 模块，组件导入所需根路径对应的 axios 进行使用。
+1234567import axios from &#x27;axios&#x27;// 调用此函数，创建一个实例对象，用request来接收const request = axios.create(&#123;  baseURL: &#x27;https://applet-base-api-t.itheima.net&#x27;&#125;)export default request
+
+配置代理解决跨域问题：自身用的http协议，localhost 端口号8080，去向一个以上三个任何不一样的请求数据
+cors解决后端配置特殊响应头
+jsonp解决只能解决get，前后端一起
+配置代理（借助脚手架）有一个代理服务器，和自己端口号一样，先找代理服务器，再转发给要请求的服务器。
+服务器之间用http请求，不涉及同源策略，所以代理服务器可以请求目标服务器。
+发布不可用，开发时使用
+单个代理vue.config.js ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/20/vue3/" title="vue(continue)">vue(continue)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-20T03:13:43.000Z" title="发表于 2023-06-20 11:13:43">2023-06-20</time></span></div><div class="content">动态组件&lt;component&gt; 组件用于动态切换组件
+123456&lt;!-- 通过 is 属性指定要渲染的组件，传递的是字符串 --&gt;&lt;component :is=&quot;comName&quot;&gt;&lt;/component&gt;&lt;button @click=&quot;comName = &#x27;Left&#x27;&quot;&gt;展示Left组件&lt;/button&gt;&lt;button @click=&quot;comName = &#x27;Right&#x27;&quot;&gt;展示Right组件&lt;/button&gt;
+
+123456data()&#123;    return&#123;    comName:&#x27;Left&#x27;    &#125;  &#125;
+
+keep-alive123456&lt;!-- 保持动态组件的状态，对被包裹的组件进行状态缓存。    被 &lt;keep-alive&gt; 包裹的组件会多出两个生命周期函数：当组件被激活时，触发 activated  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/19/vue2/" title="vue(组件化开发)">vue(组件化开发)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-19T03:47:37.000Z" title="发表于 2023-06-19 11:47:37">2023-06-19</time></span></div><div class="content">单页面应用程序(SPA)一个web网站中只有唯一的一个HTML页面，所有功能与交互在唯一一个页面完成
+vue-clivue.js开发的标准工具，简化基于webpack创建工程化的vue项目的过程
+安装和使用
+全局安装 vue 脚手架：npm i -g @vue/cli
+创建项目：vue create project-name
+运行项目：npm run serve
+
+项目目录12345678910111213141516171819202122232425262728293031323334vue_basic├── dist  //项目构建后的输出目录├── node_modules│   └── ...  // 各类依赖├── public│   └── index.html  // 项目主入口文件│   └── ...  // 其他公共资源├── src│   └── assets  //静态资源│       └── logo.png│   └── components  //公共组件,封装的，可复用的│       └── HelloWorld.vue│   └── plugin ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/18/vue1/" title="vue(过滤器,计算属性，侦听器)">vue(过滤器,计算属性，侦听器)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-18T12:00:16.000Z" title="发表于 2023-06-18 20:00:16">2023-06-18</time></span></div><div class="content">过滤器过滤器（Filters）是 vue 为开发者提供的功能，常用于文本的格式化。过滤器可以用在两个地方：插值表达式和 v-bind 属性绑定。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道符”进行调用
+12345678910111213&lt;!-- 在 filters 节点下定义的过滤器，称为“私有过滤器”，因为它只能在当前 vm 实例所控制的 el 区域内使用。如果希望在多个 vue 实例之间共享过滤器，则可以定义全局过滤器 --&gt;&lt;div id=&quot;app&quot;&gt;    &lt;p&gt;message的值&#123;&#123;date|da&#125;&#125;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;message的值&#123;&#123;message|capi&#125;&#125;&lt;/p&gt;&lt;p&gt;message的值&#123;&#123;date|da&#125;&#125;&lt;/p&gt;&lt;!-- 连续调用多个过滤器 --&gt;&lt;!-- 过滤器从左往右 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/18/vue/" title="vue(基础指令)">vue(基础指令)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-18T11:01:31.000Z" title="发表于 2023-06-18 19:01:31">2023-06-18</time></span></div><div class="content">内容渲染指令v-text,插值表达式,v-html12345678&lt;!-- 内容渲染指令v-text --&gt;       &lt;p v-text=&quot;username&quot;&gt;&lt;/p&gt;       &lt;!-- 会覆盖原本元素内容 --&gt;       &lt;p v-text=&quot;gender&quot;&gt;性别&lt;/p&gt;       &lt;!-- &#123;&#123;&#125;&#125;插值表达式，只能在内容节点 --&gt;       &lt;p&gt;姓名：&#123;&#123;username&#125;&#125;&lt;/p&gt;      &lt;!-- 要包含带标签的内容渲染 --&gt;      &lt;p v-html=&quot;info&quot;&gt;&lt;/p&gt;
+
+12345678data()&#123;return&#123;                username:&#x27;xyg&#x27;,                gender:&# ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/06/18/git/" title="git">git</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-06-18T04:50:33.000Z" title="发表于 2023-06-18 12:50:33">2023-06-18</time></span></div><div class="content">Git介绍开源的分布式版本控制系统，版本控制系统在项目开发中作用重大，主要的功能有以下几点
+
+代码备份
+版本回退
+协作开发
+权限控制
+
+Git快照是在原有文件版本的基础上重新生成一份新的文件，类似备份，在版本切换时非常快。
+三个区域工作区，暂存区，Git仓库(最终存放的区域)
+三种状态已修改，已暂存，已提交
+配置账户全局配置，对所有Git仓库有效
+12git config --global user.name &#x27;Your Name&#x27;git config --global user.email &#x27;Your Email&#x27;
+
+局部，只对当前Git仓库有效
+12git config --local user.name &#x27;Your Name&#x27;git config --local user.email &#x27;Your Email&#x27;
+
+获取Git仓库两种方式将未进行版本控制的本地目录转换为Git仓库在项目目录中，鼠标右键”Git Bash”
+初始化为Git仓库,会创建一个.git的隐藏目录，此目录为当前项目的Git仓库
+1g ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><a class="page-number" href="/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/touxiang.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Fyx</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">19</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/zhiwumi"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/webpack/" title="webpack">webpack</a><time datetime="2023-08-05T08:07:11.000Z" title="发表于 2023-08-05 16:07:11">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/nodejs/" title="node.js">node.js</a><time datetime="2023-08-05T08:06:57.000Z" title="发表于 2023-08-05 16:06:57">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/05/mobile/" title="移动端布局(flex)">移动端布局(flex)</a><time datetime="2023-08-05T01:04:23.000Z" title="发表于 2023-08-05 09:04:23">2023-08-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue6/" title="vue(vuex)">vue(vuex)</a><time datetime="2023-08-04T09:00:03.000Z" title="发表于 2023-08-04 17:00:03">2023-08-04</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/08/04/vue5/" title="vue(生命周期)">vue(生命周期)</a><time datetime="2023-08-04T07:19:18.000Z" title="发表于 2023-08-04 15:19:18">2023-08-04</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/webAPI/" style="font-size: 1.23em; color: #999ea6">webAPI</a> <a href="/tags/less/" style="font-size: 1.1em; color: #999">less</a> <a href="/tags/vue/" style="font-size: 1.5em; color: #99a9bf">vue</a> <a href="/tags/vue3/" style="font-size: 1.1em; color: #999">vue3</a> <a href="/tags/jQuery/" style="font-size: 1.1em; color: #999">jQuery</a> <a href="/tags/problems/" style="font-size: 1.1em; color: #999">problems</a> <a href="/tags/mobile/" style="font-size: 1.1em; color: #999">mobile</a> <a href="/tags/html/" style="font-size: 1.1em; color: #999">html</a> <a href="/tags/webpack/" style="font-size: 1.1em; color: #999">webpack</a> <a href="/tags/Ajax/" style="font-size: 1.1em; color: #999">Ajax</a> <a href="/tags/node-js/" style="font-size: 1.1em; color: #999">node.js</a> <a href="/tags/promise/" style="font-size: 1.1em; color: #999">promise</a> <a href="/tags/css/" style="font-size: 1.37em; color: #99a4b2">css</a> <a href="/tags/project/" style="font-size: 1.1em; color: #999">project</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/react/" style="font-size: 1.37em; color: #99a4b2">react</a> <a href="/tags/ES6/" style="font-size: 1.1em; color: #999">ES6</a> <a href="/tags/js/" style="font-size: 1.1em; color: #999">js</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/06/"><span class="card-archive-list-date">六月 2023</span><span class="card-archive-list-count">21</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">35</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-08-08T08:00:15.289Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background: #1f1f1f"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2023 By Fyx</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, ))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  if (true) {
+    typedJSFn.init(["乘兴而至","乘兴而归"])
+  } else {
+    document.getElementById("subtitle").textContent = "乘兴而至"
+  }
+}
+typedJSFn.run(subtitleType)</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
